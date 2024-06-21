@@ -7,8 +7,8 @@ const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 
-let messages = []; // Inicialmente no hay mensajes
-let connectedUsers = 0; // Contador de usuarios conectados
+let messages = []; 
+let connectedUsers = 0; 
 
 app.use(express.static(__dirname + '/public/Chat'));
 

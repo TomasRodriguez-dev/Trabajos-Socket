@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turnero - Mostrar Turnos</title>
+    <link rel="stylesheet" href="/Turnos/turnero/turnero.css">
+</head>
+<body>
+    <h2>Turnero</h2>
+
+    <div class="turnos-container">
+        <h3>Turno en Espera</h3>
+        <div id="turnoEspera"></div>
+        <button id="atenderTurno">Pasar a Atención</button>
+    </div>  
+
+    <div class="turnos-container">
+        <h3>Turno en Atención</h3>
+        <div id="turnoAtendiendo"></div>
+        <button id="terminarTurno">Marcar como Atendido</button>
+    </div>
+
+    <div class="turnos-container">
+        <h3>Turnos Atendidos</h3>
+        <div id="turnosAtendidos"></div>
+    </div>
+
+    <div class="turnos-container">
+        <h3>Turnos por Día</h3>
+        <div id="contadoresPorDia"></div>
+    </div>
+
+    <audio id="notificacionAudio" src="/Turnos/turnero/Siguiente-Turno.dat" preload="auto"></audio>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/Turnos/turnero/turnero.js"></script>
+</body>
+</html>
