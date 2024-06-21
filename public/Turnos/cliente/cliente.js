@@ -10,6 +10,37 @@ document.getElementById('formularioTurno').addEventListener('submit', function(e
     // Enviar los datos al servidor
     socket.emit('solicitudTurno', { cliente: nombre, servicio: servicio });
 
-    alert('Solicitud de turno enviada. Espere su turno.');
+    // Mostrar la alerta
+    const alerta = document.getElementById('alerta');
+    alerta.style.display = 'block';
+
+    // Ocultar la alerta después de 3 segundos
+    setTimeout(() => {
+        alerta.style.display = 'none';
+    }, 3000);
+
+    // Limpiar el formulario
     this.reset();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var btnContinuar = document.getElementById('btnContinuar');
+    var ladoIzquierdo = document.querySelector('.lado-izquierdo');
+    var ladoDerecho = document.querySelector('.lado-derecho');
+    
+    btnContinuar.addEventListener('click', function() {
+        ladoIzquierdo.style.display = 'none';
+        ladoDerecho.style.display = 'flex';
+
+        // Añadir clase para mostrar con transición
+        setTimeout(function() {
+            ladoDerecho.classList.add('mostrar');
+        }, 100); // Ajusta el tiempo según necesites
+    });
+});
+
+window.addEventListener('keydown', function(event) {
+    if (event.ctrlKey === true && (event.key === '+' || event.key === '-')) {
+        event.preventDefault();
+    }
 });

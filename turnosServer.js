@@ -18,7 +18,9 @@ app.get("/turnos", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/Turnos/turnero/turnero.html'));
 });
 
-server.listen(4000, () => {
+
+
+server.listen(4000, '0.0.0.0', () => {
     console.log(`Servidor funcionando en http://localhost:4000`);
 });
 
