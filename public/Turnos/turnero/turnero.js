@@ -41,7 +41,7 @@ socket.on('turnosAtendidos', (turnos) => {
     // Mostrar todos los turnos atendidos
     turnosAtendidosDiv.innerHTML = '';
     turnos.forEach(turno => {
-        turnosAtendidosDiv.innerHTML += `<div class="turno">${turno.numero}</div>`;
+        turnosAtendidosDiv.innerHTML += `<div class="turno">${turno.numero} - ${turno.puesto}</div>`;
     });
 });
 
