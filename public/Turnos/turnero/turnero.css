@@ -4,22 +4,26 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0; /* Color de fondo opcional */
+    background-color: #f0f0f0;
+    font-family: "Poppins", sans-serif;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 80%; /* Ancho del contenedor principal */
+    width: 80%;
 }
 
 .card {
-    background-color: #ffffff; /* Color de fondo de las tarjetas */
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .left-column, .middle-column, .right-column {
@@ -28,6 +32,205 @@ body {
     flex-direction: column;
 }
 
+.left-column {
+    flex: 1;
+}
+
 .middle-column {
-    margin: 0 20px; /* Espacio entre columnas */
+    flex: 2;
+    margin: 0 20px;
+}
+
+.right-column {
+    flex: 1;
+}
+
+.turno-en-espera {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #8388A4;
+    margin: 0 0 10px 0;
+}
+
+.turnos-container {
+    flex: 1;
+    overflow-y: auto; 
+    margin-bottom: 10px;
+    padding-right: 10px; 
+}
+
+.turnos-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.turnos-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+turnos-container::-webkit-scrollbar-thumb {
+    background-color: #8388A4;
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+
+.turno-en-atencion {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.turno-atendidos {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-atencion, .btn-atendido {
+    background-color: #007bff;
+    width: 16em;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5em;
+    padding: 10px;
+    transition: background-color 0.4s ease;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.btn-atencion:hover, .btn-atendido:hover {
+    background-color: #0056b3;
+}
+
+.turno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1374F4; 
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #FFF; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.turno i {
+    margin-right: 10px; 
+    font-size: 20px; 
+}
+
+.turno .numero {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.turno .puesto {
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFF;
+}
+
+#turnoAtendiendo .turno {
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    font-size: 24px; 
+}
+
+#turnoAtendiendo .turno .numero {
+    font-size: 36px; 
+    margin-bottom: 10px;
+}
+
+#turnoAtendiendo .turno .puesto {
+    font-size: 18px; 
+    font-weight: 400;
+    color: #FFF;
+}
+
+#contadoresPorDia div {
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+}
+
+#contadoresPorDia .fecha {
+    font-weight: 600;
+    color: #FFF;
+}
+
+#contadoresPorDia .total {
+    font-weight: 400;
+    color: #FFF;
+}
+
+#turnosAtendidos {
+    flex: 1;
+    overflow-y: auto;
+}
+
+#turnosAtendidos .turno {
+    margin-bottom: 5px;
+}
+
+.no-turnos {
+    padding: 10px;
+    text-align: center;
+    color: #8388A4;
+}
+
+.alert {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #FFF;
+    background-color: #F44336;
+    width: 500px; 
+    max-width: 90%; 
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    .left-column, .middle-column, .right-column {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+    .left-column, .middle-column, .right-column {
+        margin: 10px 0;
+    }
 }

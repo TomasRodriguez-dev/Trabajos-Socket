@@ -5,38 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turnero - Mostrar Turnos</title>
     <link rel="stylesheet" href="/Turnos/turnero/turnero.css">
+    <script src="https://kit.fontawesome.com/e1174e5ddb.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <div class="container">
         <div class="left-column">
             <div class="card turno-en-espera">
-                <h3>Turno en Espera</h3>
-                <div id="turnoEspera"></div>
-                <button id="atenderTurno">Pasar a Atención</button>
+                <h3 class="card-title">Turnos en Espera</h3>
+                <div class="turnos-container" id="turnoEspera"></div>
+                <button class="btn-atencion" id="atenderTurno">Pasar a Atención</button>
             </div>
         </div>
     
         <div class="middle-column">
             <div class="card turno-en-atencion">
-                <h3>Turno Actual</h3>
+                <h3 class="card-title">Turno Actual</h3>
                 <div id="turnoAtendiendo"></div>
-                <button id="terminarTurno">Marcar como Atendido</button>
-            </div>
-    
-            <div class="card turnos-por-dia">
-                <h3>Turnos por Día</h3>
-                <div id="contadoresPorDia"></div>
+                <button class="btn-atendido" id="terminarTurno">Marcar como Atendido</button>
             </div>
         </div>
     
         <div class="right-column">
             <div class="card turno-atendidos">
-                <h3>Turnos Atendidos</h3>
-                <div id="turnosAtendidos"></div>
+                <h3 class="card-title">Turnos Atendidos</h3>
+                <div class="turnos-container" id="turnosAtendidos"></div>
+                <div class="turnos-por-dia">
+                    <h3 class="card-title">Turnos por Día</h3>
+                    <div id="contadoresPorDia"></div>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>       
 
     <audio id="notificacionAudio" src="/Turnos/turnero/Siguiente-Turno.dat" preload="auto"></audio>
     <script src="/socket.io/socket.io.js"></script>

@@ -7,14 +7,12 @@ document.getElementById('formularioTurno').addEventListener('submit', function(e
     const nombre = document.getElementById('nombre').value;
     const servicio = document.getElementById('servicio').value;
 
-    // Enviar los datos al servidor
     socket.emit('solicitudTurno', { cliente: nombre, servicio: servicio });
 
     // Mostrar la alerta
     const alerta = document.getElementById('alerta');
     alerta.style.display = 'block';
 
-    // Ocultar la alerta después de 3 segundos
     setTimeout(() => {
         alerta.style.display = 'none';
     }, 3000);
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Añadir clase para mostrar con transición
         setTimeout(function() {
             ladoDerecho.classList.add('mostrar');
-        }, 100); // Ajusta el tiempo según necesites
+        }, 100); 
     });
 });
 
