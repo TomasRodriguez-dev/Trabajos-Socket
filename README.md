@@ -14,4 +14,18 @@ comunicación, llamados sockets. De esta manera, el intercambio de datos puede p
 <img src="https://github.com/TomasRodriguez-dev/TomasRodriguez-dev/assets/102562595/0315e429-65f0-44a7-a033-e0372c623bfc">
 <img src="https://github.com/TomasRodriguez-dev/TomasRodriguez-dev/assets/102562595/90936dcf-388a-4a55-aa68-42ec3c489d51">
 <h2>Guia de como poder utilizar los sistemas:</h2>
-
+  
+```sh
+  git clone https://github.com/TomasRodriguez-dev/Trabajos-Socket.git
+  ```
+```sh
+  npm install
+  ```
+- Para arrancar el chat se tendra que poner el siguinte comando.
+```sh
+  npm run start:chat 
+  ```
+- Para arrancar el turnero se tendra que poner el siguinte comando.
+```sh
+  npm run start:turnos 
+  ```
